@@ -1,0 +1,26 @@
+[Unit]
+Description=Sempre Focus Bot (Telegram -> Notion)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sempre
+Group=sempre
+WorkingDirectory=/opt/sempre-bot
+ExecStart=/opt/sempre-bot/venv/bin/python /opt/sempre-bot/bot.py
+Restart=always
+RestartSec=5
+Environment=TZ=Europe/Moscow
+Environment=PYTHONUNBUFFERED=1
+StandardOutput=journal
+StandardError=journal
+
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadOnlyPaths=/opt/sempre-bot
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
