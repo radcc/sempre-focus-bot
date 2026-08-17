@@ -13,6 +13,8 @@ Restart=always
 RestartSec=5
 Environment=TZ=Europe/Moscow
 Environment=PYTHONUNBUFFERED=1
+Environment=STATE_DIR=/var/lib/sempre-bot
+StateDirectory=sempre-bot
 StandardOutput=journal
 StandardError=journal
 
