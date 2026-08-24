@@ -1,0 +1,8 @@
+[Unit]
+Description=Sempre Focus Bot auto-deploy (git pull + rebuild)
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/sempre-autodeploy.sh
+TimeoutStartSec=15min
